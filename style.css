@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #3f51b5;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.date-selector {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 18px;
+    background-color: #f0f4ff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(63, 81, 181, 0.1);
+}
+
+.date-selector label {
+    margin-right: 12px;
+    font-weight: bold;
+    color: #3f51b5;
+}
+
+.date-selector input {
+    padding: 10px;
+    border: 1px solid #d0d9ff;
+    border-radius: 6px;
+    margin-right: 12px;
+    flex-grow: 1;
+    font-size: 15px;
+}
+
+.date-selector button {
+    padding: 10px 20px;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.date-selector button:hover {
+    background-color: #303f9f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.meal-info {
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.meal-date-display {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #3f51b5;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #d0d9ff;
+}
+
+.loading {
+    text-align: center;
+    padding: 25px;
+    font-style: italic;
+    color: #666;
+}
+
+.error-message {
+    padding: 15px;
+    background-color: #ffebee;
+    color: #c62828;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(198, 40, 40, 0.1);
+}
+
+.meal-details h2 {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 18px;
+    text-align: center;
+}
+
+.meal-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 700px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.meal-menu {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 15px;
+    flex: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.meal-menu:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.meal-menu h3 {
+    color: #3f51b5;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 2px solid #e0e6ff;
+    padding-bottom: 10px;
+}
+
+.meal-menu ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+.meal-menu li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    position: relative;
+    padding-left: 20px;
+}
+
+.meal-menu li:before {
+    content: '•';
+    color: #3f51b5;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.meal-menu li:last-child {
+    border-bottom: none;
+}
+
+.meal-nutrition {
+    background-color: #f0f4ff;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 15px;
+    flex: 1;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.meal-nutrition:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.meal-nutrition h3 {
+    color: #3f51b5;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 2px solid #d0d9ff;
+    padding-bottom: 10px;
+}
+
+.meal-nutrition p {
+    margin-bottom: 8px;
+    padding: 5px 0;
+    border-bottom: 1px dashed #d0d9ff;
+    padding-left: 20px;
+    position: relative;
+}
+
+.meal-nutrition p:before {
+    content: '✓';
+    color: #3f51b5;
+    position: absolute;
+    left: 0;
+    font-size: 14px;
+}
+
+.meal-nutrition p:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .meal-container {
+        flex-direction: column;
+    }
+    
+    .meal-menu, .meal-nutrition {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .date-selector {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .date-selector input {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+    
+    .date-selector button {
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+}
